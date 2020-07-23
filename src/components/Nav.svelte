@@ -1,6 +1,5 @@
 <script>
 	export let segment;
-
 </script>
 
 <style>
@@ -47,6 +46,7 @@
 		padding: 1em 0.5em;
 		display: block;
 		font-size: 18px;
+		font-family: SansPro;
 	}
 	.logo{
 		display: inline-block;

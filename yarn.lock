@@ -1829,6 +1829,11 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
+svelte-lazy@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/svelte-lazy/-/svelte-lazy-0.1.13.tgz#e8fba18b0fc9f600c42e19aee8ccfc6d08667c97"
+  integrity sha512-19A2HkW4gE+r/WEsO3wsJatMv+dTtpuZUjjP9bl+boPkDm/269tNCJ1bdmpKuKDI0J+AXQT3ShUwxVFWwioqPQ==
+
 svelte-scrollto@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/svelte-scrollto/-/svelte-scrollto-0.2.0.tgz#a1da47876466796bba4533a4346537f752f01680"

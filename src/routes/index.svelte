@@ -3,7 +3,9 @@ let bgImage = "header.jpg";
 let delivery ="delivery.png";
 let social ="social-media.jpg";
 let contact ="contact.jpg";
+import Lazy from 'svelte-lazy';
 </script>
+
 <style>
 @font-face {
     font-family: 'SansPro';
@@ -191,6 +193,44 @@ button a{
 		font-size: 28px;
 	}
 }
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
 
 </style>
 
@@ -199,9 +239,11 @@ button a{
 </svelte:head>
 
 <section id="header" style="background-image: url('{bgImage}')">
-<h1>Wash your hands <br> and feel "safe"</h1>
+<h1 class="animated animatedFadeInUp fadeInUp">Wash your hands <br> and feel "safe"</h1>
 </section>
-<section id="First_Section">
+
+<Lazy height={300} offset={150}>
+<section id="First_Section" class="animated animatedFadeInUp fadeInUp">
 <p>Developed and manufactured by ARSAT,
 a trusted and certified quality European aerospace factory
 where safety and high quality are fundamentally
@@ -215,13 +257,16 @@ Quality and value for money rarely meet.
 The Astreea® hand sanitizer is one
 of these exceptions.</p>
 </section>
+</Lazy>
 
+<Lazy height={300} offset={150}>
 <section id="Second_Section">
 <div class="container">
 	<div class="item"><img alt="dispenser" src="1.jpeg"/></div>
 	<div class="item"><img alt="dispenser" src="3.jpeg"/></div>
 </div>
 </section>
+</Lazy>
 
 <section id="Third_Section">
 <div class="container">
@@ -278,7 +323,7 @@ of these exceptions.</p>
 
 </div>  
 </section>
-<button><a href="#header"></a></button>
+<button><a href="#header"><span></span></a></button>
 <div class="footer">
 <ul>
 <li><a href="/">Terms & Condition</a></li>
