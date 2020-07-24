@@ -1,6 +1,6 @@
 <script>
 let bgImage = "header.jpg";
-let delivery ="delivery.png";
+let delivery ="delivery.jpg";
 let social ="social-media.jpg";
 let contact ="contact.jpg";
 import Lazy from 'svelte-lazy';
@@ -17,6 +17,13 @@ import Lazy from 'svelte-lazy';
     src: url(/FiraSans-Bold.ttf);
     font-style: normal;
   }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0 none;
+}
 
 #header {
     background-position: center;
@@ -75,7 +82,7 @@ box-shadow: 0px 7px 45px rgba(0, 0, 0, 0.12);
 	text-align:center;
 	color: #ffffff;
 	font-size: 48px;
-	padding: 400px;
+	padding: 250px;
 }
 
 
@@ -232,6 +239,76 @@ button a{
     -webkit-animation-name: fadeInUp;
 }
 
+#Third_Section .container{
+  letter-spacing: -7px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+form .row .item{
+  width: 50%;
+  display: inline-block;
+  padding: 0 15px;
+}
+input[type="text"]{
+  border-radius: 71px;
+  line-height: 21px;
+}
+
+form .item_text{
+  padding: 0 15px;
+}
+
+form textarea{
+  border-radius: 21px;
+}
+
+#Third_Section h2{
+  letter-spacing: normal;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+#Third_Section input[type="submit"]{
+    background-color: #2D2D2D;
+    background: #2D2D2D;
+    padding: 15px 45px;
+    color: #fff;
+    font-family: SansPro;
+    font-size: 16px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-left: 15px;
+    transition: all 0.5s ease;
+    border: 1px solid #2D2D2D;
+}
+#Third_Section input[type="submit"]:hover{
+    background: #ffffff;
+    color: #2D2D2D;
+    border: 1px solid #2D2D2D;
+}
+#Third_Section input[type="text"]{
+    padding-left: 20px;
+    font-size: 16px;
+    font-family: SansPro;
+}
+#Third_Section textarea{
+  padding-left: 20px;
+  font-size: 16px;
+  font-family: SansPro;
+}
+#Fifth_Section .item a span{
+  content: "" !important;
+  position: absolute;
+  background-image: url(/facebook.png);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  top: 20px;
+  display: inline-block;
+}
+
 </style>
 
 <svelte:head>
@@ -271,29 +348,34 @@ of these exceptions.</p>
 <section id="Third_Section">
 <div class="container">
 <form action="" method="POST">
-    <label for="fname">Name</label>
-    <input type="text" id="name" name="name" placeholder="Your name.." />
-
-    <label for="lname">Email</label>
-    <input
-      type="text"
-      id="email"
-      name="_replyto"
-      placeholder="Email address.." />
-
-	<label for="fname">Phone number</label>
-    <input type="text" id="name" name="name" placeholder="Phone number.." />
-
-	<label for="fname">Company or Organization</label>
-    <input type="text" id="name" name="name" placeholder="Company name .." />  
-
-    <label for="subject">Message:</label>
+  <h2>Contact Us:</h2>
+  <div class="row">
+    <div class="item">
+      <input type="text" id="name" name="name" placeholder="Your name.." />
+    </div>
+    <div class="item">
+      <input
+        type="text"
+        id="email"
+        name="_replyto"
+        placeholder="Email address.." />
+    </div>  
+  </div>
+  <div class="row">
+      <div class="item">
+      <input type="text" id="name" name="name" placeholder="Phone number.." />
+      </div>
+      <div class="item">
+      <input type="text" id="name" name="name" placeholder="Company name .." />  
+      </div>
+  </div>
+  <div class="item_text">
     <textarea
       id="subject"
       name="subject"
       placeholder="Your message.."
       style="height:200px" />
-
+  </div>
     <input type="submit" value="Submit" />
   </form>
   </div>
@@ -307,17 +389,16 @@ of these exceptions.</p>
 	<div class="item"><img alt="dispenser" src="social-media.jpg"/>
     <div class="item_content">
       <h4>We are on Social Media:</h4>
-      <span><p>Facebook</p></span>
-      <span><p>Instagram</p></span>
-      <span><p>Linkedin</p></span>
+      <a href="https://www.facebook.com/" target="blank"><span></span></a>
+      <span></span>
+      <span></span>
     </div>
   </div>
 
   <div class="item"><img alt="dispenser" src="contact.jpg"/>
     <div class="item_content">
       <h4>Call or chat with us live</h4>
-      <span><p>04 0740 691 940</p></span>
-      <span><p>Chat Icon</p></span>
+        <h4>+40 0740 691 940</h4>
     </div>
   </div>
 
