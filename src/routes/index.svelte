@@ -4,6 +4,9 @@ let delivery ="delivery.jpg";
 let social ="social-media.jpg";
 let contact ="contact.jpg";
 import Lazy from 'svelte-lazy';
+const onload = (node) => {
+    console.log('on load');
+  }
 </script>
 
 <style>
@@ -133,12 +136,19 @@ input[type="text"],
 #Fifth_Section img{
     max-width: 500px;
     height: 400px;
+    border-radius: 21px;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);  
+    transition: all 0.5s ease;
 }
-
+#Fifth_Section img:hover{
+  filter: blur(0px);
+    -webkit-filter: blur(0px);  
+}
 #Fifth_Section .item_content{
   position: absolute;
   z-index: 99;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -151,28 +161,38 @@ button a:before{
   content: "" !important;
   position: absolute;
   background-image: url(/top.png);
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
   transform: rotate(270deg);
-  opacity: 0.7;
-  top: 20px;
-}
-button a{
-  position: absolute;
-  transform: translateX(50%);
-  left: 49%;
+  top: 30px;
 }
 
+button a{
+  position: absolute;
+  transform: translateX(-50%);
+  left: 49%;
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+button a:hover{
+  opacity: 1;
+}
 .footer {
   text-align: center;
-  height: 80px;
+  height: 150px;
   padding-top: 80px;
-  background: #171717;
+  background: #2D2D2D;
+
 }
 .footer ul li{
   list-style: none;
   color: #fff;
+  background: #2D2D2D;
+}
+.footer ul li a{
+   font-family: SansPro;
+   font-size: 18px;
 }
 
 @media only screen and (max-width: 765px){
@@ -298,6 +318,10 @@ form textarea{
   font-size: 16px;
   font-family: SansPro;
 }
+#Fifth_Section h4{
+  font-size: 28px;
+  font-family: SansPro;
+}
 #Fifth_Section .item a span{
   content: "" !important;
   position: absolute;
@@ -307,6 +331,48 @@ form textarea{
   cursor: pointer;
   top: 20px;
   display: inline-block;
+}
+#Fifth_Section .item a:nth-child(3) span{
+  content: "" !important;
+  position: absolute;
+  background-image: url(/facebook.png);
+  width: 44px;
+  height: 44px;
+  background-size: cover;
+  cursor: pointer;
+  top: 40px;
+  left: 0px;
+  display: inline-block;
+}
+#Fifth_Section .item a:nth-child(2) span{
+  content: "" !important;
+  position: absolute;
+  background-image: url(/twitter.png);
+  width: 44px;
+  height: 44px;
+  background-size: cover;
+  cursor: pointer;
+  top: 40px;
+  left: 60px;
+  display: inline-block;
+}
+#Fifth_Section .item a span{
+  content: "" !important;
+  position: absolute;
+  background-image: url(/instagram.png);
+  width: 44px;
+  height: 44px;
+  background-size: cover;
+  cursor: pointer;
+  top: 40px;
+  left: 120px;
+  display: inline-block;
+}
+#Four_Section h2{
+    font-family: Fira;
+    text-align: center;
+    color: #ffffff;
+    font-size: 48px;
 }
 
 </style>
@@ -319,7 +385,7 @@ form textarea{
 <h1 class="animated animatedFadeInUp fadeInUp">Wash your hands <br> and feel "safe"</h1>
 </section>
 
-<Lazy height={300} offset={150}>
+<Lazy height={800} offset={150} onload={onload} fadeOption={{delay: 500, duration: 1000}}>
 <section id="First_Section" class="animated animatedFadeInUp fadeInUp">
 <p>Developed and manufactured by ARSAT,
 a trusted and certified quality European aerospace factory
@@ -336,7 +402,7 @@ of these exceptions.</p>
 </section>
 </Lazy>
 
-<Lazy height={300} offset={150}>
+<Lazy height={800} offset={150} onload={onload} fadeOption={{delay: 500, duration: 1000}}>
 <section id="Second_Section">
 <div class="container">
 	<div class="item"><img alt="dispenser" src="1.jpeg"/></div>
@@ -345,6 +411,7 @@ of these exceptions.</p>
 </section>
 </Lazy>
 
+<Lazy height={800} offset={150} onload={onload} fadeOption={{delay: 500, duration: 1000}}>
 <section id="Third_Section">
 <div class="container">
 <form action="" method="POST">
@@ -380,7 +447,9 @@ of these exceptions.</p>
   </form>
   </div>
 </section>
-<br/>
+</Lazy>
+
+<Lazy height={800} offset={150} onload={onload} fadeOption={{delay: 500, duration: 1000}}>
 <section id="Four_Section" style="background-image: url('{delivery}')">
 <h2>More Information / Delivery Methods / How is fabricated</h2>
 </section>
@@ -390,8 +459,8 @@ of these exceptions.</p>
     <div class="item_content">
       <h4>We are on Social Media:</h4>
       <a href="https://www.facebook.com/" target="blank"><span></span></a>
-      <span></span>
-      <span></span>
+      <a href="https://www.facebook.com/" target="blank"><span></span></a>
+      <a href="https://www.facebook.com/" target="blank"><span></span></a>
     </div>
   </div>
 
@@ -404,6 +473,7 @@ of these exceptions.</p>
 
 </div>  
 </section>
+</Lazy>
 <button><a href="#header"><span></span></a></button>
 <div class="footer">
 <ul>
