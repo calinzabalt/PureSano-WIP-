@@ -375,6 +375,28 @@ form textarea{
     font-size: 48px;
 }
 
+@media only screen and (max-width: 1106px){
+    #Fifth_Section .item{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    #Fifth_Section h4{
+    font-size: 18px;
+    font-family: SansPro;
+  }
+}
+@media only screen and (max-width: 765px){
+	#Four_Section h2{
+		padding: 100px 10px 100px 10px;
+		font-size: 38px;
+	}
+  #Fifth_Section img{
+    max-width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 </style>
 
 <svelte:head>
