@@ -20,6 +20,11 @@ const onload = (node) => {
     src: url(/FiraSans-Bold.ttf);
     font-style: normal;
   }
+@font-face {
+    font-family: 'Lob';
+    src: url(/Lobster-Regular.ttf);
+    font-style: normal;
+  }
 
 * {
     margin: 0;
@@ -40,6 +45,7 @@ const onload = (node) => {
 	font-size: 68px;
 	padding: 400px;
 }
+
 section{
   margin-bottom: 80px;
 }
@@ -395,6 +401,9 @@ form textarea{
     height: 300px;
     margin-left: auto;
     margin-right: auto;
+  }
+  form .row .item{
+    width: 100%;
   }
 }
 </style>

@@ -68,6 +68,10 @@
 		font-size: 16px;
 	}
 }
+.logo h2{
+	font-family: Lob;
+	font-size: 30px;
+}
 </style>
 
 <nav>
